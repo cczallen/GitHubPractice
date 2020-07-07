@@ -45,3 +45,55 @@
     {% next_button %}
 
 {% endblock %}
+
+
+
+{% block global_scripts %}
+<script>
+        // var synth = window.speechSynthesis;
+
+
+
+    // 按下播放按鈕
+    $('#speak-button').click(function(){
+        text = $('.speech-area').text();
+        // speak("我 2 週後 得到 120 元")
+        speak(text)
+    })
+
+function speak(text){
+
+    var utterThis = new SpeechSynthesisUtterance(text);
+
+    if (synth.speaking) {
+        console.error('speechSynthesis.speaking');
+        return;
+    }
+
+    if (text !== '') {
+    //取得輸入的文字
+    utterThis.onend = function (event) {
+        console.log('SpeechSynthesisUtterance.onend');
+    }
+    utterThis.onerror = function (event) {
+        console.error('SpeechSynthesisUtterance.onerror');
+    }
+    //取得設定的語言
+    // var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+    // for(i = 0; i < voices.length ; i++) {
+    //   if(voices[i].name === selectedOption) {
+    //     utterThis.voice = voices[i];
+    //   }
+    // }
+    //取得設定的音頻
+    utterThis.pitch = 1.0;
+    //取得設定的話速
+    utterThis.rate = 0.8;
+    //文字轉語音
+    synth.speak(utterThis);
+    // alert(text)
+  }
+}
+
+</script>
+{% endblock %}
