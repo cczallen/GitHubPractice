@@ -15,12 +15,12 @@
         width: 280px;
         height: auto;
         font-size: 40px;
-        /* display: none; */
+         display: none; 
     }
     .debug-info {
         display: none;
     }
-    
+
 </style>
 {% endblock %}
 
@@ -76,9 +76,8 @@ function speak(text){
     utterThis.onerror = function (event) {
         console.error('SpeechSynthesisUtterance.onerror');
     }
-    //取得設定的語言
+    //取得設定的語言(因為我的電腦預設語言是英文!)
     utterThis.voice = synth.getVoices()[25];
-
 
     //取得設定的音頻
     utterThis.pitch = 1.0;
