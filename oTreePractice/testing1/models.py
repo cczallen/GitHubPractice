@@ -40,3 +40,4 @@ class Player(BasePlayer):
             ],
             widget=widgets.RadioSelect,
         )
+    
