@@ -15,7 +15,7 @@
         width: 280px;
         height: auto;
         font-size: 40px;
-        /* display: none; */
+        display: none;
     }
     .debug-info {
         display: none;
@@ -77,7 +77,6 @@ function speak(text){
     }
     //取得設定的語言
     utterThis.voice = synth.getVoices()[0];
-
 
     //取得設定的音頻
     utterThis.pitch = 1.0;
