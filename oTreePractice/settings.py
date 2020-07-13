@@ -20,7 +20,7 @@ SESSION_CONFIGS = [
        name='testing1',
        display_name="Testing 1",
        num_demo_participants=3,
-       app_sequence=['testing1']
+       app_sequence=['testing1'],
     ),
 ]
 
