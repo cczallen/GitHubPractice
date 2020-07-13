@@ -17,6 +17,12 @@
         font-size: 40px;
         display: none;
     }
+    .hidden-area {
+        display: none;
+    }
+    
+    .formfields-area {
+    }
     .debug-info {
         display: none;
     }
@@ -39,9 +45,13 @@
         得到 <br>
         120 元
     </div>
+    <div class="formfields-area">
+        {% formfield player.are_you_ok %}
 
+    <div class="hidden-area">
+        {% formfield player.treatment_rate %}
+    </div>
 
-    {% formfields %}
     {% next_button %}
 
 {% endblock %}
@@ -50,6 +60,8 @@
 
 {% block global_scripts %}
 <script>
+
+
 var synth = window.speechSynthesis;
     // 按下播放按鈕
     $('#speak-button').click(function(){
@@ -78,10 +90,12 @@ function speak(text){
     //取得設定的語言
     utterThis.voice = synth.getVoices()[0];
 
+    var x = js_vars.chosen_rate;
+
     //取得設定的音頻
     utterThis.pitch = 1.0;
     //取得設定的話速
-    utterThis.rate = 0.8;
+    utterThis.rate = x;
     //文字轉語音
     synth.speak(utterThis);
     // alert(text)

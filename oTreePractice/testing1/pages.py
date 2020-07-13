@@ -5,7 +5,12 @@ from .models import Constants
 
 class MyPage(Page):
     form_model = 'player'
-    form_fields = ['are_you_ok']
+    form_fields = [
+        'are_you_ok',
+        'treatment_rate']
+
+    def js_vars(self):
+        return dict(chosen_rate = self.player.treatment_rate,)
 
 
 class ResultsWaitPage(WaitPage):
