@@ -30,7 +30,6 @@ class Treatment(object):
         participant = player.participant
         # lazy loading: 若不存在就決定並起來，若已存在就直接取出
         if Constants.key_method not in participant.vars:
-            #""" 步驟四：將control跟treatmentWill隨機選擇，存進participant.vars中"""
             choice = [ 0.7, 0.8, 0.9 ]
             participant.vars[Constants.key_method] = random.choice(choice)
         

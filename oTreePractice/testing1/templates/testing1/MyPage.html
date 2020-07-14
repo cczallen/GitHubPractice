@@ -59,7 +59,7 @@ var synth = window.speechSynthesis;
         speak(text)
     })
 
-let x = {{player.treatment_method|json}};
+let speech_rate = {{player.treatment_method|json}};
 
 function speak(text){
 
@@ -83,8 +83,8 @@ function speak(text){
     //取得設定的音頻
     utterThis.pitch = 1.0;
     //取得設定的話速
-    // alert(x);
-    utterThis.rate = x;
+    // alert(speech_rate);
+    utterThis.rate = speech_rate;
     //文字轉語音
     synth.speak(utterThis);
     // alert(text)
