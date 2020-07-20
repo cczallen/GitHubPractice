@@ -23,6 +23,9 @@
     .debug-info {
 	    display: none;
     }
+    .button {
+	    border: 1px solid black
+    }
 </style>
 {% endblock %}
 
@@ -31,11 +34,11 @@
     大家好
     <div class="speech-area" id="speech-area">
 	    我
-	    2 週後 <br>
-	    得到 <br>
+	    2 週後<br>
+	    得到<br>
 	    120 元
     </div>
-    <buttion type="button" id="speak-button"> 請點擊播放語音 </button>
+    <button class="button" type="button" id="speak-button"> 請點擊播放語音 </button>
 {% block global_scripts %}
 <script>
 	var synth = window.speechSynthesis;
@@ -45,7 +48,7 @@
 			console.error('SpeechSynthesisUtterance.onerror');
 		}
 		utterThis.pitch = 1
-		utterThis.rate = 1
+		utterThis.rate = {{ player.treatment }}
 		synth.speak(utterThis)
 	}
 	$('#speak-button').click(function(){
