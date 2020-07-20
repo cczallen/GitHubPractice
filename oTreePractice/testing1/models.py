@@ -65,5 +65,6 @@ class Player(BasePlayer):
     
     treatment_method = models.StringField()
     treatment = models.FloatField()
+    # these are duplicated columns, need to find solutions
 
         
