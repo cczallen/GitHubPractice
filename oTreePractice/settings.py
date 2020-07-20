@@ -17,11 +17,17 @@ SESSION_CONFIGS = [
     #    app_sequence=['public_goods', 'payment_info']
     # ),
     dict(
-       name='testing1',
-       display_name="Testing 1",
+       name='testing1',#_hidden',
+       display_name="Testing 1",# hidden",
        num_demo_participants=3,
        app_sequence=['testing1']
     ),
+    #dict(
+    #    name='testing1_showed',
+    #    display_name='Testing 1 showed',
+    #    num_demo_participants=3,
+    #    app_sequence=['testing1']
+    #),
 ]
 
 
